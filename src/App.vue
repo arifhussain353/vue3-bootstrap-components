@@ -1,61 +1,22 @@
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="detail-content">
+    <h2>Bootstrap 5 Stand-Alone Components Integrated with Vue 3</h2>
+    <div class="logo-block">
+      <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="">
+      <span>+</span>
+      <img src="https://vuejs.org/logo.svg" alt="">
+    </div>
+
+    <div class="modal-block">
+      <h4>Calling bootstrap modal with vue</h4>
+      <Demo />
+    </div>
   </div>
-  <div>
-    <!-- Modal -->
-    <Modal modalId="modalRef" @onLoad="onLoadRemoveModal">
-      <div class="modal-header">
-        <h5 class="modal-title">Hello from Bootstrap 5</h5>
-        <button type="button" class="btn-close" @click="hideModal()"></button>
-      </div>
-      <div class="modal-body">
 
-        ho
-
-      </div>
-      <div class="modal-footer">
-        <button @click="hideModal()" type="button" class="btn btn-secondary">Close</button>
-
-        <button type="button" class="btn btn-primary">
-          Confirm
-        </button>
-      </div>
-
-    </Modal>
-  </div>
 </template>
-
-
 
 <script setup>
 
-//Import files/labs block
-import { onMounted, watch, ref } from 'vue';
-import Modal from './components/Modal.vue';
-
-//Define variables block
-const modalRef = ref(null)
-
-
-//Load remove instance call
-const onLoadEvent = (ref) => {
-  modalRef.value = ref
-}
-
-//Show remove modal call
-const showModal = (item) => {
-  modalRef.value.show()
-}
-
-//Hide remove modal call
-const hideModal = () => {
-  modalRef.value.hide()
-}
+import Demo from './Demo.vue';
 
 </script>
